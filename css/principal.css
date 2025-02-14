@@ -1,0 +1,84 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e2f1ff; /* Azul claro para todos los estilos */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Encabezado */
+.header {
+    text-align: center;
+    color: #0077b6; /* Azul oscuro para el texto */
+}
+
+/* Nombre del proyecto */
+.project-name {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center;
+    gap: 15px; /* Espacio entre el texto y el logo */
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Texto "FACE" y "VERIFY" */
+.text {
+    color: #005f73; /* Azul oscuro moderno */
+}
+
+/* Logo */
+.logo {
+    width: 230px;
+    height: auto;
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+/* Botón circular */
+.circle-button {
+    width: 60px; /* Tamaño del botón */
+    height: 60px; /* Mismo valor que el ancho para hacerlo circular */
+    border-radius: 50%; /* Hace el botón circular */
+    background-color: #005f73; /* Color principal del botón */
+    border: none; /* Quita el borde */
+    color: white; /* Color del ícono */
+    font-size: 1.5rem; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    margin-top: 30px; /* Espacio entre el logo y el botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto hover para el botón */
+.circle-button:hover {
+    background-color: #0a9396; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-name span {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.project-name img {
+    animation-delay: 0.3s; /* Retraso para el logo */
+}
