@@ -1,0 +1,123 @@
+ /* 🔹 Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e2f1ff; /* Azul claro */
+}
+
+/* 🔹 Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 🔹 Barra superior */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaciado uniforme */
+    width: 100%;
+    padding: 15px 20px; /* Padding ajustado */
+    background-color: #005f73;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* 🔹 Botones del menú y cerrar sesión */
+.menu-button, .logout-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px; /* Tamaño fijo */
+    text-align: center;
+    flex-shrink: 0; /* Evita que se encojan */
+}
+
+/* 🔹 Título centrado */
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Ocupa el espacio restante */
+    margin: 0 10px; /* Margen para separar los botones */
+    white-space: nowrap; /* Evita que el título se divida en varias líneas */
+    overflow: hidden; /* Oculta el texto que no cabe */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+}
+
+/* 🔹 Menú lateral (oculto al inicio) */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo claro */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* 🔹 Contenido del menú */
+.menu-content {
+    text-align: center;
+    background-color: white; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-content ul li {
+    margin: 20px 0;
+}
+
+.menu-content ul li a {
+    color: #005f73; /* Color azul oscuro */
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.menu-content ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Botón para cerrar el menú */
+.close-menu {
+    background-color: #005f73; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacio superior */
+}
+
+.close-menu:hover {
+    background-color: #004052; /* Color azul más oscuro al pasar el mouse */
+}
+
+/* 🔹 Contenido principal */
+.main-content {
+    margin-top: 80px; /* Ajuste para la barra superior */
+    padding: 20px;
+    text-align: center;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - FaceVerify</title>
+    <link rel="stylesheet" href="css/homepagestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+
+        <!-- Barra superior -->
+        <header class="top-bar">
+            <button class="menu-button" id="openMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="title">FACEVERIFY</h1>
+            <button class="logout-button" onclick="window.location.href='../login/login.html'">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </header>
+
+        <!-- Menú lateral (oculto al inicio) -->
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="menu-content">
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <nav class="menu-nav">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Configuración</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <p>Aquí irá el contenido principal de la aplicación...</p>
+        </main>
+
+    </div>
+
+    <script src="js/homepagescript.js"></script>
+</body>
+</html>
