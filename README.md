@@ -1,4 +1,4 @@
-# Backlog de Front-End para Sistema de Asistencia
+# Backlog de Front-End de FaceVerify
 
 Este documento detalla las tareas de Front-End necesarias para el desarrollo del sistema de asistencia, organizadas por prioridad y con estimaciones de tiempo.
 
