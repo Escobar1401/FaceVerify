@@ -1,89 +1,68 @@
-Backlog del Front-End:
+# Backlog de Front-End para Sistema de Asistencia
 
-1. Funcionalidad de Inicio de Sesión (RF001, RF002, RF003)
+Este documento detalla las tareas de Front-End necesarias para el desarrollo del sistema de asistencia, organizadas por prioridad y con estimaciones de tiempo.
 
-Tarea 1: Como desarrollador Front-End, quiero crear la interfaz de selección de tipo de usuario (profesor, estudiante, etc.).
-Prioridad: Alta
-Estimación: 4 horas
-Tarea 2: Como desarrollador Front-End, quiero desarrollar el formulario de inicio de sesión con campos para usuario y contraseña.
-Prioridad: Alta
-Estimación: 6 horas
-Tarea 3: Como desarrollador Front-End, quiero implementar la funcionalidad de cierre de sesión.
-Prioridad: Alta
-Estimación: 2 horas
-2. Recuperación de Contraseña (RF013)
+## Convenciones
 
-Tarea 4: Como desarrollador Front-End, quiero crear la interfaz para la recuperación de contraseña.
-Prioridad: Medios
-Estimación: 5 horas
-Tarea 5: Como desarrollador Front-End, quiero implementar la lógica para enviar un correo de recuperación de contraseña.
-Prioridad: Medios
-Estimación: 3 horas
-3. Búsqueda de Estudiantes (RF014)
+* **Prioridad:**
+    * Alta: Tareas críticas para la funcionalidad básica.
+    * Media: Tareas importantes para la experiencia del usuario.
+    * Baja: Tareas de mejora o funcionalidades secundarias.
+* **Estimación de tiempo:** Se expresa en horas de desarrollo.
 
-Tarea 6: Como desarrollador Front-End, quiero crear la interfaz de búsqueda de estudiantes con filtros.
-Prioridad: Medios
-Estimación: 6 horas
-Tarea 7: Como desarrollador Front-End, quiero implementar la visualización de resultados de búsqueda.
-Prioridad: Medios
-Estimación: 4 horas
-4. Estadísticas de Asistencia (RF015)
+## Tareas
 
-Tarea 8: Como desarrollador Front-End, quiero crear la interfaz para mostrar estadísticas de asistencia.
-Prioridad: Medios
-Estimación: 8 horas
-Tarea 9: Como desarrollador Front-End, quiero implementar gráficos y tablas para visualizar las estadísticas.
-Prioridad: Medios
-Estimación: 6 horas
-5. Menú personalizado (RF016)
+### Prioridad Alta
 
-Tarea 10: Como desarrollador Front-End, quiero crear un menú dinámico que se adapta al rol del usuario.
-Prioridad: Alta
-Estimación: 7 horas
-6. Listas de Grados y Estudiantes (RF017, RF018, RF019)
+1.  **Tarea 1:** Crear la interfaz de selección de tipo de usuario (profesor, estudiante, etc.).
+    * Estimación: 4 horas
+2.  **Tarea 2:** Desarrollar el formulario de inicio de sesión con campos para usuario y contraseña.
+    * Estimación: 6 horas
+3.  **Tarea 3:** Implementar la funcionalidad de cierre de sesión.
+    * Estimación: 2 horas
+4.  **Tarea 10:** Crear un menú dinámico que se adapte al rol del usuario.
+    * Estimación: 7 horas
+5.  **Tarea 15:** Crear el formulario de excusa para estudiantes.
+    * Estimación: 8 horas
 
-Tarea 11: Como desarrollador Front-End, quiero crear la interfaz para mostrar la lista de grados.
-Prioridad: Medios
-Estimación: 4 horas
-Tarea 12: Como desarrollador Front-End, quiero crear la interfaz para mostrar la lista de estudiantes por grado.
-Prioridad: Medios
-Estimación: 5 horas
-Tarea 13: Como desarrollador Front-End, quiero crear la interfaz para mostrar la lista de estudiantes por tutor legal.
-Prioridad: Medios
-Estimación: 5 horas
-7. Lista de Retrasos (RF022)
+### Prioridad Media
 
-Tarea 14: Como desarrollador Front-End, quiero crear la interfaz para mostrar la lista de estudiantes con retraso.
-Prioridad: Medios
-Estimación: 5 horas
-8. Formulario de excusa (RF032, RF038, RF041, RF042, RF043, RF044)
+1.  **Tarea 4:** Crear la interfaz para la recuperación de contraseña.
+    * Estimación: 5 horas
+2.  **Tarea 5:** Implementar la lógica para enviar un correo de recuperación de contraseña.
+    * Estimación: 3 horas
+3.  **Tarea 6:** Crear la interfaz de búsqueda de estudiantes con filtros.
+    * Estimación: 6 horas
+4.  **Tarea 7:** Implementar la visualización de resultados de búsqueda.
+    * Estimación: 4 horas
+5.  **Tarea 8:** Crear la interfaz para mostrar estadísticas de asistencia.
+    * Estimación: 8 horas
+6.  **Tarea 9:** Implementar gráficos y tablas para visualizar las estadísticas.
+    * Estimación: 6 horas
+7.  **Tarea 11:** Crear la interfaz para mostrar la lista de grados.
+    * Estimación: 4 horas
+8.  **Tarea 12:** Crear la interfaz para mostrar la lista de estudiantes por grado.
+    * Estimación: 5 horas
+9.  **Tarea 13:** Crear la interfaz para mostrar la lista de estudiantes por tutor legal.
+    * Estimación: 5 horas
+10. **Tarea 14:** Crear la interfaz para mostrar la lista de estudiantes con retraso.
+    * Estimación: 5 horas
+11. **Tarea 16:** Implementar la funcionalidad para adjuntar archivos al formulario.
+    * Estimación: 4 horas
+12. **Tarea 17:** Implementar la funcionalidad para descargar el formulario de excusa.
+    * Estimación: 3 horas
+13. **Tarea 18:** Crear la interfaz para el perfil del estudiante.
+    * Estimación: 6 horas
+14. **Tarea 20:** Crear la interfaz para consultar los registros de inasistencia.
+    * Estimación: 5 horas
 
-Tarea 15: Como desarrollador Front-End, quiero crear el formulario de excusa para estudiantes.
-Prioridad: Alta
-Estimación: 8 horas
-Tarea 16: Como desarrollador Front-End, quiero implementar la funcionalidad para adjuntar archivos al formulario.
-Prioridad: Medios
-Estimación: 4 horas
-Tarea 17: Como desarrollador Front-End, quiero implementar la funcionalidad para descargar el formulario de excusa.
-Prioridad: Medios
-Estimación: 3 horas
-9. Perfil del Estudiante (RF033)
+### Prioridad Baja
 
-Tarea 18: Como desarrollador Front-End, quiero crear la interfaz para el perfil del estudiante.
-Prioridad: Medios
-Estimación: 6 horas
-10. Observaciones de Asistencia (RF047)
+1.  **Tarea 19:** Crear la interfaz para registrar observaciones de asistencia.
+    * Estimación: 4 horas
 
-Tarea 19: Como desarrollador Front-End, quiero crear la interfaz para registrar observaciones de asistencia.
-Prioridad: Baja
-Estimación: 4 horas
-11. Registro de Inasistencias (RF050)
+## Priorización
 
-Tarea 20: Como desarrollador Front-End, quiero crear la interfaz para consultar los registros de inasistencia.
-Prioridad: Medios
-Estimación: 5 horas.
-Priorización:
-
-Alta: Tareas 1, 2, 3, 10, 15 (Funcionalidad básica de inicio de sesión y formulario de excusa).
-Medios: Tareas 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 20 (Funcionalidades importantes para la experiencia del usuario).
-Baja: Tarea 19 (Mejoras y funcionalidades secundarias).
+1.  **Alta:** Tareas 1, 2, 3, 10, 15 (Funcionalidad básica de inicio de sesión y formulario de excusa).
+2.  **Media:** Tareas 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 20 (Funcionalidades importantes para la experiencia del usuario).
+3.  **Baja:** Tarea 19 (Mejoras y funcionalidades secundarias).
