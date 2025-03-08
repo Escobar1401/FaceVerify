@@ -1,5 +1,5 @@
-// Simulación del rol del usuario (esto luego vendrá del backend)
-const userRole = "profesor"; // Puede ser "admin", "profesor" o "estudiante"
+// Leer el rol del usuario desde localStorage
+const userRole = localStorage.getItem("userRole") || "estudiante"; // Valor predeterminado: "estudiante"
 
 // Seleccionar elementos
 const openMenu = document.getElementById("openMenu");
@@ -8,8 +8,16 @@ const menuNav = document.querySelector(".menu-nav ul");
 
 // Opciones de menú según el rol del usuario
 const menuOptions = {
+    estudiante: [
+        { text: "Inicio", link: "#" },
+        { text: "Justificación de inasistencias", link: "#" },
+        { text: "Excusas", link: "#" },
+        { text: "Estadísticas", link: "#" },
+        { text: "Soporte técnico", link: "#" },
+        { text: "Cerrar sesión", link: "#" },
+    ],
     profesor: [
-        { text: "Inicio", link: "homepage.html" },
+        { text: "Inicio", link: "#" },
         { text: "Gestión de asistencia", link: "#" },
         { text: "Consultas", link: "#" },
         { text: "Registros manuales", link: "#" },
@@ -18,12 +26,23 @@ const menuOptions = {
         { text: "Estadísticas", link: "#" },
         { text: "Cerrar sesión", link: "#" },
     ],
-    estudiante: [
+    "tutor-legal": [
         { text: "Inicio", link: "#" },
-        { text: "Justificación de inasistencias", link: "#" },
-        { text: "Excusas", link: "#" },
+        { text: "Perfiles de estudiantes", link: "#" },
+        { text: "Notificaciones", link: "#" },
+        { text: "Gestión de excusas", link: "#" },
+        { text: "Listas", link: "#" },
         { text: "Estadísticas", link: "#" },
-        { text: "Soporte técnico", link: "#" },
+        { text: "Cerrar sesión", link: "#" },
+    ],
+    coordinador: [
+        { text: "Inicio", link: "#" },
+        { text: "Alertas", link: "#" },
+        { text: "Programación de asistencia", link: "#" },
+        { text: "Carga de imágenes", link: "#" },
+        { text: "Generación de informes", link: "#" },
+        { text: "Correcciones", link: "#" },
+        { text: "Estadísticas", link: "#" },
         { text: "Cerrar sesión", link: "#" },
     ],
     secretaria: [
@@ -34,16 +53,7 @@ const menuOptions = {
         { text: "Generación de informes", link: "#" },
         { text: "Cerrar sesión", link: "#" },
     ],
-    tutor: [
-        { text: "Inicio", link: "#" },
-        { text: "Perfiles de estudiantes", link: "#" },
-        { text: "Notificaciones", link: "#" },
-        { text: "Gestión de excusas", link: "#" },
-        { text: "Listas", link: "#" },
-        { text: "Estadísticas", link: "#" },
-        { text: "Cerrar sesión", link: "#" },
-    ],
-    coordinador: [
+    rector: [
         { text: "Inicio", link: "#" },
         { text: "Alertas", link: "#" },
         { text: "Programación de asistencia", link: "#" },
