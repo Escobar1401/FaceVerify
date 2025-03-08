@@ -3,14 +3,13 @@ const userRole = "profesor"; // Puede ser "admin", "profesor" o "estudiante"
 
 // Seleccionar elementos
 const openMenu = document.getElementById("openMenu");
-const closeMenu = document.getElementById("closeMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 const menuNav = document.querySelector(".menu-nav ul");
 
 // Opciones de menú según el rol del usuario
 const menuOptions = {
     profesor: [
-        { text: "Inicio", link: "#" },
+        { text: "Inicio", link: "homepage.html" },
         { text: "Gestión de asistencia", link: "#" },
         { text: "Consultas", link: "#" },
         { text: "Registros manuales", link: "#" },
@@ -66,6 +65,11 @@ function renderMenu(role) {
         a.textContent = option.text;
         li.appendChild(a);
         menuNav.appendChild(li);
+
+        // Cerrar el menú al hacer clic en una opción
+        a.addEventListener("click", () => {
+            menuOverlay.classList.remove("active");
+        });
     });
 }
 
@@ -74,10 +78,12 @@ renderMenu(userRole);
 
 // Abrir menú
 openMenu.addEventListener("click", function () {
-    menuOverlay.style.display = "flex";
+    menuOverlay.classList.add("active");
 });
 
-// Cerrar menú
-closeMenu.addEventListener("click", function () {
-    menuOverlay.style.display = "none";
+// Cerrar menú al hacer clic fuera de él
+document.addEventListener("click", (event) => {
+    if (!menuOverlay.contains(event.target) && !openMenu.contains(event.target)) {
+        menuOverlay.classList.remove("active");
+    }
 });

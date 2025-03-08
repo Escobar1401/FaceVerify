@@ -1,4 +1,4 @@
- /* 🔹 Estilos generales */
+/* 🔹 Estilos generales */
 body, html {
     margin: 0;
     padding: 0;
@@ -19,17 +19,17 @@ body, html {
 .top-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Espaciado uniforme */
+    justify-content: space-between;
     width: 100%;
-    padding: 15px 20px; /* Padding ajustado */
+    padding: 15px 20px;
     background-color: #005f73;
     color: white;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    z-index: 1000; /* Barra superior por encima de todo */
+    box-sizing: border-box;
 }
 
 /* 🔹 Botones del menú y cerrar sesión */
@@ -39,9 +39,9 @@ body, html {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
-    width: 40px; /* Tamaño fijo */
+    width: 40px;
     text-align: center;
-    flex-shrink: 0; /* Evita que se encojan */
+    flex-shrink: 0;
 }
 
 /* 🔹 Título centrado */
@@ -49,70 +49,60 @@ body, html {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
-    flex-grow: 1; /* Ocupa el espacio restante */
-    margin: 0 10px; /* Margen para separar los botones */
-    white-space: nowrap; /* Evita que el título se divida en varias líneas */
-    overflow: hidden; /* Oculta el texto que no cabe */
-    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    flex-grow: 1;
+    margin: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* 🔹 Menú lateral (oculto al inicio) */
+/* 🔹 Menú desplegable desde la barra superior */
 .menu-overlay {
     position: fixed;
-    top: 0;
+    top: 70px; /* Espacio para la barra superior */
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Fondo claro */
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación suave */
+    transform: translateY(-100%); /* Oculta el menú arriba */
     z-index: 999;
+}
+
+/* 🔹 Mostrar el menú */
+.menu-overlay.active {
+    transform: translateY(0); /* Muestra el menú */
 }
 
 /* 🔹 Contenido del menú */
 .menu-content {
-    text-align: center;
-    background-color: white; /* Fondo blanco */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.menu-content ul {
+.menu-nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.menu-content ul li {
-    margin: 20px 0;
+.menu-nav ul li {
+    margin: 15px 0;
 }
 
-.menu-content ul li a {
+.menu-nav ul li a {
     color: #005f73; /* Color azul oscuro */
-    font-size: 1.5rem;
     text-decoration: none;
-}
-
-.menu-content ul li a:hover {
-    text-decoration: underline;
-}
-
-/* 🔹 Botón para cerrar el menú */
-.close-menu {
-    background-color: #005f73; /* Fondo azul oscuro */
-    color: white; /* Texto blanco */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px; /* Espacio superior */
+    transition: background-color 0.3s ease;
 }
 
-.close-menu:hover {
-    background-color: #004052; /* Color azul más oscuro al pasar el mouse */
+.menu-nav ul li a:hover {
+    background-color: #e2f1ff; /* Fondo azul claro al pasar el mouse */
+    color: #004052; /* Color azul más oscuro al pasar el mouse */
 }
 
 /* 🔹 Contenido principal */
