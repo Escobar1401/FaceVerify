@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Excusa - FaceVerify</title>
+    <link rel="stylesheet" href="../css/stylelogin.css"> <!-- Estilos del login -->
+    <link rel="stylesheet" href="../css/excuseform.css"> <!-- Estilos del formulario -->
+    <link rel="stylesheet" href="../css/homepagestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra superior -->
+        <header class="top-bar">
+            <button class="menu-button" id="openMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="title">FACEVERIFY</h1>
+            <button class="logout-button" onclick="window.location.href='login.html'">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </header>
+
+        <!-- Menú desplegable (oculto al inicio) -->
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="menu-content">
+                <nav class="menu-nav">
+                    <ul>
+                        <!-- Las opciones del menú se generarán dinámicamente con JavaScript -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Formulario de excusa -->
+        <div class="excuse-form">
+            <h2 class="form-title">Formulario de Excusa</h2>
+            <form id="excuseForm">
+                <!-- Datos del estudiante -->
+                <fieldset>
+                    <legend>Datos del Estudiante</legend>
+                    <div class="input-group">
+                        <label for="student-name" class="input-label">Nombre Completo</label>
+                        <input type="text" id="student-name" class="input-field" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-id" class="input-label">Identificación</label>
+                        <input type="text" id="student-id" class="input-field" placeholder="Ingresa tu identificación" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-email" class="input-label">Correo Institucional</label>
+                        <input type="email" id="student-email" class="input-field" placeholder="Ingresa tu correo" required>
+                    </div>
+                </fieldset>
+
+                <!-- Datos del tutor -->
+                <fieldset>
+                    <legend>Datos del Tutor</legend>
+                    <div class="input-group">
+                        <label for="tutor-name" class="input-label">Nombre del Tutor</label>
+                        <input type="text" id="tutor-name" class="input-field" placeholder="Ingresa el nombre del tutor" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tutor-relation" class="input-label">Relación con el Estudiante</label>
+                        <input type="text" id="tutor-relation" class="input-field" placeholder="Ej: Padre, Madre, Acudiente" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tutor-phone" class="input-label">Teléfono del Tutor</label>
+                        <input type="tel" id="tutor-phone" class="input-field" placeholder="Ingresa el teléfono del tutor" required>
+                    </div>
+                </fieldset>
+
+                <!-- Fecha de inasistencia -->
+                <fieldset>
+                    <legend>Fecha de Inasistencia</legend>
+                    <div class="input-group">
+                        <label for="absence-date" class="input-label">Fecha en la que faltó</label>
+                        <input type="date" id="absence-date" class="input-field" required>
+                    </div>
+                </fieldset>
+
+                <!-- Tabla de materias -->
+                <fieldset>
+                    <legend>Materias Inasistidas</legend>
+                    <p>Selecciona las materias a las que faltaste:</p>
+                    <table class="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Faltó</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemáticas</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Español</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Ciencias</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Historia</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+
+                <!-- Adjuntar archivos -->
+                <fieldset>
+                    <legend>Adjuntar Archivos</legend>
+                    <div class="input-group">
+                        <label for="excuse-file" class="input-label">Subir Excusa (PDF o Imagen)</label>
+                        <input type="file" id="excuse-file" class="input-field" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+                </fieldset>
+
+                <!-- Botón de enviar -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i> Enviar Excusa
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/excuseform.js"></script> <!-- Lógica del formulario -->
+</body>
+</html>

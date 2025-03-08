@@ -10,7 +10,7 @@ const menuNav = document.querySelector(".menu-nav ul");
 const menuOptions = {
     estudiante: [
         { text: "Inicio", link: "homepage.html" },
-        { text: "Justificación de inasistencias", link: "excuseform.html" },
+        { text: "Justificación de inasistencias", link: "#" },
         { text: "Excusas", link: "#" },
         { text: "Estadísticas", link: "#" },
         { text: "Soporte técnico", link: "#" },
@@ -96,4 +96,34 @@ document.addEventListener("click", (event) => {
     if (!menuOverlay.contains(event.target) && !openMenu.contains(event.target)) {
         menuOverlay.classList.remove("active");
     }
+});
+
+// Validar y enviar el formulario
+document.getElementById("excuseForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar el envío real del formulario
+
+    // Validar que se haya seleccionado al menos una materia
+    const checkboxes = document.querySelectorAll(".attendance-table input[type='checkbox']");
+    let atLeastOneChecked = false;
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            atLeastOneChecked = true;
+        }
+    });
+
+    if (!atLeastOneChecked) {
+        alert("Debes seleccionar al menos una materia.");
+        return;
+    }
+
+    // Validar que se haya subido un archivo
+    const fileInput = document.getElementById("excuse-file");
+    if (fileInput.files.length === 0) {
+        alert("Debes adjuntar un archivo de excusa.");
+        return;
+    }
+
+    // Si todo está bien, mostrar un mensaje de éxito
+    alert("Excusa enviada correctamente.");
+    // Aquí podrías agregar lógica para enviar los datos al servidor
 });
