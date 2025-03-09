@@ -109,6 +109,12 @@ body, html {
     border-color: #0a9396; /* Cambia el color del borde al enfocar */
 }
 
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
 /* Botón de enviar */
 .submit-button {
     width: 100%;
@@ -123,8 +129,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Espacio entre ícono y texto */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    gap: 10px;
+    box-sizing: border-box;
 }
 
 .submit-button:hover {
@@ -132,7 +138,6 @@ body, html {
     transform: scale(1.05);
 }
 
-/* Enlace para recuperar contraseña */
 .forgot-password {
     text-align: center;
     margin-top: 15px;
@@ -148,7 +153,6 @@ body, html {
     text-decoration: underline;
 }
 
-/* Animación */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }

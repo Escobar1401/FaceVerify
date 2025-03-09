@@ -34,16 +34,16 @@
                     </select>
                 </div>
 
-                <!-- Campo de correo electrónico -->
                 <div class="input-group">
                     <label for="email" class="input-label">Correo Institucional</label>
                     <input type="email" id="email" class="input-field" placeholder="Ingresa tu correo">
+                    <span id="email-error" class="error-message" style="display: none;">El correo es obligatorio.</span>
                 </div>
-
-                <!-- Campo de contraseña -->
+                
                 <div class="input-group">
                     <label for="password" class="input-label">Contraseña</label>
                     <input type="password" id="password" class="input-field" placeholder="Ingresa tu contraseña">
+                    <span id="password-error" class="error-message" style="display: none;">La contraseña es obligatoria.</span>
                 </div>
 
                 <!-- Botón de enviar -->
@@ -59,13 +59,6 @@
         </div>
     </div>
 
-    <script>
-        // Guardar el rol seleccionado en localStorage antes de redirigir
-        document.getElementById("loginButton").addEventListener("click", function () {
-            const userType = document.getElementById("user-type").value;
-            localStorage.setItem("userRole", userType); // Guardar el rol en localStorage
-            window.location.href = "../html/homepage.html"; // Redirigir a homepage
-        });
-    </script>
+    <script src="../js/login.js"></script>
 </body>
 </html>
