@@ -1,8 +1,17 @@
 document.getElementById("loginButton").addEventListener("click", function () {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const userType = document.getElementById("user-type").value;
     const emailError = document.getElementById("email-error");
     const passwordError = document.getElementById("password-error");
+    const userTypeError = document.getElementById("user-type-error");
+
+    
+    if (!userType) {
+        userTypeError.style.display = "block";
+    } else {
+        userTypeError.style.display = "none";
+    }
 
     if (!email) {
         emailError.style.display = "block";
@@ -17,7 +26,6 @@ document.getElementById("loginButton").addEventListener("click", function () {
     }
 
     if (email && password) {
-        const userType = document.getElementById("user-type").value;
         localStorage.setItem("userRole", userType);
         window.location.href = "../html/homepage.html";
     }
