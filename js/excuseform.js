@@ -100,9 +100,7 @@ document.addEventListener("click", (event) => {
 
 // Validar y enviar el formulario
 document.getElementById("excuseForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar el envío real del formulario
 
-    // Validar que se haya seleccionado al menos una materia
     const checkboxes = document.querySelectorAll(".attendance-table input[type='checkbox']");
     let atLeastOneChecked = false;
     checkboxes.forEach(checkbox => {
@@ -116,12 +114,43 @@ document.getElementById("excuseForm").addEventListener("submit", function (event
         return;
     }
 
-    // Validar que se haya subido un archivo
-    const fileInput = document.getElementById("excuse-file");
-    if (fileInput.files.length === 0) {
-        alert("Debes adjuntar un archivo de excusa.");
-        return;
-    }
+    document.getElementById("excuseButton").addEventListener("click", function () {
+        const studentname = document.getElementById("student-name").value;
+        const studentid = document.getElementById("student-id").value;
+        const studentemail = document.getElementById("student-email").value;
+        const tutorname = document.getElementById("tutor-name").value;
+        const tutorphone = document.getElementById("tutor-phone").value;
+        const absencedate = document.getElementById("absence-date").value;
+
+        const studentnameError = document.getElementById("email-error");
+        const passwordError = document.getElementById("password-error");
+        const userTypeError = document.getElementById("user-type-error");
+    
+        
+        if (!userType) {
+            userTypeError.style.display = "block";
+        } else {
+            userTypeError.style.display = "none";
+        }
+    
+        if (!studentname) {
+            studentnameError.style.display = "block";
+        } else {
+            studentnameError.style.display = "none";
+        }
+    
+        if (!password) {
+            passwordError.style.display = "block";
+        } else {
+            passwordError.style.display = "none";
+        }
+    
+        if (email && password) {
+            localStorage.setItem("userRole", userType);
+            window.location.href = "../html/homepage.html";
+        }
+    });
+    
 
     // Si todo está bien, mostrar un mensaje de éxito
     alert("Excusa enviada correctamente.");

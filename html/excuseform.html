@@ -42,15 +42,18 @@
                     <legend>Datos del Estudiante</legend>
                     <div class="input-group">
                         <label for="student-name" class="input-label">Nombre Completo</label>
-                        <input type="text" id="student-name" class="input-field" placeholder="Ingresa tu nombre" required>
+                        <input type="text" id="student-name" class="input-field" placeholder="Ingresa tu nombre">
+                        <span id="student-name-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                     </div>
                     <div class="input-group">
                         <label for="student-id" class="input-label">Identificación</label>
-                        <input type="text" id="student-id" class="input-field" placeholder="Ingresa tu identificación" required>
+                        <input type="text" id="student-id" class="input-field" placeholder="Ingresa tu identificación">
+                        <span id="student-id-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                     </div>
                     <div class="input-group">
                         <label for="student-email" class="input-label">Correo Institucional</label>
-                        <input type="email" id="student-email" class="input-field" placeholder="Ingresa tu correo" required>
+                        <input type="email" id="student-email" class="input-field" placeholder="Ingresa tu correo">
+                        <span id="student-email-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                     </div>
                 </fieldset>
 
@@ -59,15 +62,13 @@
                     <legend>Datos del Tutor</legend>
                     <div class="input-group">
                         <label for="tutor-name" class="input-label">Nombre del Tutor</label>
-                        <input type="text" id="tutor-name" class="input-field" placeholder="Ingresa el nombre del tutor" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="tutor-relation" class="input-label">Relación con el Estudiante</label>
-                        <input type="text" id="tutor-relation" class="input-field" placeholder="Ej: Padre, Madre, Acudiente" required>
+                        <input type="text" id="tutor-name" class="input-field" placeholder="Ingresa el nombre del tutor">
+                        <span id="tutor-name-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                     </div>
                     <div class="input-group">
                         <label for="tutor-phone" class="input-label">Teléfono del Tutor</label>
-                        <input type="tel" id="tutor-phone" class="input-field" placeholder="Ingresa el teléfono del tutor" required>
+                        <input type="tel" id="tutor-phone" class="input-field" placeholder="Ingresa el teléfono del tutor">
+                        <span id="tutor-phone-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                     </div>
                 </fieldset>
 
@@ -76,7 +77,8 @@
                     <legend>Fecha de Inasistencia</legend>
                     <div class="input-group">
                         <label for="absence-date" class="input-label">Fecha en la que faltó</label>
-                        <input type="date" id="absence-date" class="input-field" required>
+                        <input type="date" id="absence-date" class="input-field">
+                        <span id="absence-date-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                     </div>
                 </fieldset>
 
@@ -97,15 +99,55 @@
                                 <td><input type="checkbox"></td>
                             </tr>
                             <tr>
+                                <td>Geometria</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Estadistica</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
                                 <td>Español</td>
                                 <td><input type="checkbox"></td>
                             </tr>
                             <tr>
-                                <td>Ciencias</td>
+                                <td>Ingles</td>
                                 <td><input type="checkbox"></td>
                             </tr>
                             <tr>
-                                <td>Historia</td>
+                                <td>Ciencias Sociales</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Etica</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Religion</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Ed. Fisica</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Ciencias Naturales</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Fisica</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Quimica</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Tecnologia</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Artistica</td>
                                 <td><input type="checkbox"></td>
                             </tr>
                         </tbody>
@@ -117,13 +159,13 @@
                     <legend>Adjuntar Archivos</legend>
                     <div class="input-group">
                         <label for="excuse-file" class="input-label">Subir Excusa (PDF o Imagen)</label>
-                        <input type="file" id="excuse-file" class="input-field" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <input type="file" id="excuse-file" class="input-field" accept=".pdf,.jpg,.jpeg,.png">
                     </div>
                 </fieldset>
 
                 <!-- Botón de enviar -->
                 <div class="form-actions">
-                    <button type="submit" class="submit-button">
+                    <button id="excuseButton" type="submit" class="submit-button">
                         <i class="fas fa-paper-plane"></i> Enviar Excusa
                     </button>
                 </div>
