@@ -100,59 +100,66 @@ document.addEventListener("click", (event) => {
 
 // Validar y enviar el formulario
 document.getElementById("excuseForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+});
 
-    const checkboxes = document.querySelectorAll(".attendance-table input[type='checkbox']");
-    let atLeastOneChecked = false;
-    checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-            atLeastOneChecked = true;
-        }
-    });
+document.getElementById("excuseButton").addEventListener("click", function () {
+    const studentname = document.getElementById("student-name").value;
+    const studentid = document.getElementById("student-id").value;
+    const studentemail = document.getElementById("student-email").value;
+    const tutorname = document.getElementById("tutor-name").value;
+    const tutorphone = document.getElementById("tutor-phone").value;
+    const absencedate = document.getElementById("absence-date").value;
 
-    if (!atLeastOneChecked) {
-        alert("Debes seleccionar al menos una materia.");
-        return;
+    const studentnameError = document.getElementById("student-name-error");
+    const studentidError = document.getElementById("student-id-error");
+    const studentemailError = document.getElementById("student-email-error");
+    const tutornameError = document.getElementById("tutor-name-error");
+    const tutorphoneError = document.getElementById("tutor-phone-error");
+    const absencedateError = document.getElementById("absence-date-error");
+
+    
+    if (!studentname) {
+        studentnameError.style.display = "block";
+    } else {
+        studentnameError.style.display = "none";
     }
 
-    document.getElementById("excuseButton").addEventListener("click", function () {
-        const studentname = document.getElementById("student-name").value;
-        const studentid = document.getElementById("student-id").value;
-        const studentemail = document.getElementById("student-email").value;
-        const tutorname = document.getElementById("tutor-name").value;
-        const tutorphone = document.getElementById("tutor-phone").value;
-        const absencedate = document.getElementById("absence-date").value;
+    if (!studentid) {
+        studentidError.style.display = "block";
+    } else {
+        studentidError.style.display = "none";
+    }
 
-        const studentnameError = document.getElementById("email-error");
-        const passwordError = document.getElementById("password-error");
-        const userTypeError = document.getElementById("user-type-error");
-    
-        
-        if (!userType) {
-            userTypeError.style.display = "block";
-        } else {
-            userTypeError.style.display = "none";
-        }
-    
-        if (!studentname) {
-            studentnameError.style.display = "block";
-        } else {
-            studentnameError.style.display = "none";
-        }
-    
-        if (!password) {
-            passwordError.style.display = "block";
-        } else {
-            passwordError.style.display = "none";
-        }
-    
-        if (email && password) {
-            localStorage.setItem("userRole", userType);
-            window.location.href = "../html/homepage.html";
-        }
-    });
-    
+    if (!studentemail) {
+        studentemailError.style.display = "block";
+    } else {
+        studentemailError.style.display = "none";
+    }
 
-    // Si todo está bien, mostrar un mensaje de éxito
-    alert("Excusa enviada correctamente.");
-    // Aquí podrías agregar lógica para enviar los datos al servidor
+    if (!tutorname) {
+        tutornameError.style.display = "block";
+    } else {
+        tutornameError.style.display = "none";
+    }
+
+    if (!tutorphone) {
+        tutorphoneError.style.display = "block";
+    } else {
+        tutorphoneError.style.display = "none";
+    }
+
+    if (!absencedate) {
+        absencedateError.style.display = "block";
+    } else {
+        absencedateError.style.display = "none";
+    }
+
+    if ( studentname && studentid && studentemail && tutorname && tutorphone && absencedate) {
+        // Si todo está bien, mostrar un mensaje de éxito
+        alert("Excusa enviada correctamente.");
+        // Limpiar el formulario
+        document.getElementById("excuseForm").reset();
+    }
 });
+
