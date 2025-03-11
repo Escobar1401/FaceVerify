@@ -5,34 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - FaceVerify</title>
     <link rel="stylesheet" href="../css/homepagestyle.css">
+    <link rel="stylesheet" href="../components/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
     <!-- Contenedor principal -->
     <div class="container">
 
-        <!-- Barra superior -->
-        <header class="top-bar">
-            <button class="menu-button" id="openMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <h1 class="title">FACEVERIFY</h1>
-            <button class="logout-button" onclick="window.location.href='login.html'">
-                <i class="fas fa-sign-out-alt"></i>
-            </button>
-        </header>
-
-        <!-- Menú lateral (oculto al inicio) -->
-        <div class="menu-overlay" id="menuOverlay">
-            <div class="menu-content">
-                <nav class="menu-nav">
-                    <ul>
-                        <!-- Las opciones del menú se generarán dinámicamente con JavaScript -->
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <!-- Aquí se cargará el header dinámicamente -->
+        <div id="header-container"></div>
 
         <!-- Contenido principal -->
         <main class="main-content">
@@ -41,6 +22,6 @@
 
     </div>
 
-    <script src="../js/homepagescript.js"></script>
+    <script src="../components/js/header.js"></script>
 </body>
 </html>

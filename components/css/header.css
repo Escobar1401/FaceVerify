@@ -1,0 +1,97 @@
+/* 🔹 Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 🔹 Barra superior */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #005f73;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Barra superior por encima de todo */
+    box-sizing: border-box;
+}
+
+/* 🔹 Botones del menú y cerrar sesión */
+.menu-button, .logout-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* 🔹 Título centrado */
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 🔹 Menú desplegable desde la barra superior */
+.menu-overlay {
+    position: fixed;
+    top: 70px; /* Espacio para la barra superior */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación suave */
+    transform: translateY(-100%); /* Oculta el menú arriba */
+    z-index: 999;
+}
+
+/* 🔹 Mostrar el menú */
+.menu-overlay.active {
+    transform: translateY(0); /* Muestra el menú */
+}
+
+/* 🔹 Contenido del menú */
+.menu-content {
+    padding: 20px;
+}
+
+.menu-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-nav ul li {
+    margin: 15px 0;
+}
+
+.menu-nav ul li a {
+    color: #005f73; /* Color azul oscuro */
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-nav ul li a:hover {
+    background-color: #e2f1ff; /* Fondo azul claro al pasar el mouse */
+    color: #004052; /* Color azul más oscuro al pasar el mouse */
+}

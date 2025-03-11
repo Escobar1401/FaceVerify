@@ -6,32 +6,12 @@
     <title>Formulario de Excusa - FaceVerify</title>
     <link rel="stylesheet" href="../css/stylelogin.css"> <!-- Estilos del login -->
     <link rel="stylesheet" href="../css/excuseform.css"> <!-- Estilos del formulario -->
-    <link rel="stylesheet" href="../css/homepagestyle.css">
+    <link rel="stylesheet" href="../components/css/header.css"> <!-- Estilos del header -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <!-- Barra superior -->
-        <header class="top-bar">
-            <button class="menu-button" id="openMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <h1 class="title">FACEVERIFY</h1>
-            <button class="logout-button" onclick="window.location.href='login.html'">
-                <i class="fas fa-sign-out-alt"></i>
-            </button>
-        </header>
-
-        <!-- Menú desplegable (oculto al inicio) -->
-        <div class="menu-overlay" id="menuOverlay">
-            <div class="menu-content">
-                <nav class="menu-nav">
-                    <ul>
-                        <!-- Las opciones del menú se generarán dinámicamente con JavaScript -->
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <div id="header-container"></div>
 
         <!-- Formulario de excusa -->
         <div class="excuse-form">
@@ -193,5 +173,6 @@
     </div>
 
     <script src="../js/excuseform.js"></script> <!-- Lógica del formulario -->
+    <script src="../components/js/header.js"></script>
 </body>
 </html>
