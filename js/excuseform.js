@@ -98,12 +98,84 @@ document.addEventListener("click", (event) => {
     }
 });
 
-// Validar y enviar el formulario
-document.getElementById("excuseForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+// Validaciones en tiempo real
+document.getElementById("student-name").addEventListener("input", function () {
+    const error = document.getElementById("student-name-error");
+    if (!this.value) {
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+    }
 });
 
-document.getElementById("excuseButton").addEventListener("click", function () {
+document.getElementById("student-id").addEventListener("input", function () {
+    const error = document.getElementById("student-id-error");
+    if (!this.value) {
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+    }
+});
+
+document.getElementById("student-email").addEventListener("input", function () {
+    const error = document.getElementById("student-email-error");
+    if (!this.value) {
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+    }
+});
+
+document.getElementById("tutor-name").addEventListener("input", function () {
+    const error = document.getElementById("tutor-name-error");
+    if (!this.value) {
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+    }
+});
+
+document.getElementById("tutor-phone").addEventListener("input", function () {
+    const error = document.getElementById("tutor-phone-error");
+    if (!this.value) {
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+    }
+});
+
+document.getElementById("absence-date").addEventListener("change", function () {
+    const error = document.getElementById("absence-date-error");
+    const selectedDate = new Date(this.value);
+    const today = new Date();
+
+    if (selectedDate > today) {
+        error.textContent = "La fecha no puede ser futura.";
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+    }
+});
+
+// Validación de archivos adjuntos
+document.getElementById("excuse-file").addEventListener("change", function () {
+    const file = this.files[0];
+    const allowedTypes = ["application/pdf", "image/jpeg", "image/png"];
+    const maxSize = 5 * 1024 * 1024; // 5 MB
+
+    if (!allowedTypes.includes(file.type)) {
+        alert("Solo se permiten archivos PDF, JPG o PNG.");
+        this.value = ""; // Limpiar el campo
+    } else if (file.size > maxSize) {
+        alert("El archivo no puede ser mayor a 5 MB.");
+        this.value = ""; // Limpiar el campo
+    }
+});
+
+// Enviar datos del formulario
+document.getElementById("excuseForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
     const studentname = document.getElementById("student-name").value;
     const studentid = document.getElementById("student-id").value;
     const studentemail = document.getElementById("student-email").value;
@@ -118,48 +190,18 @@ document.getElementById("excuseButton").addEventListener("click", function () {
     const tutorphoneError = document.getElementById("tutor-phone-error");
     const absencedateError = document.getElementById("absence-date-error");
 
-    
-    if (!studentname) {
-        studentnameError.style.display = "block";
-    } else {
-        studentnameError.style.display = "none";
+    if (!studentname || !studentid || !studentemail || !tutorname || !tutorphone || !absencedate) {
+        alert("Por favor, completa todos los campos obligatorios.");
+        return;
     }
 
-    if (!studentid) {
-        studentidError.style.display = "block";
-    } else {
-        studentidError.style.display = "none";
-    }
+    const response = "ok"; // Simulación de respuesta del servidor
 
-    if (!studentemail) {
-        studentemailError.style.display = "block";
-    } else {
-        studentemailError.style.display = "none";
-    }
-
-    if (!tutorname) {
-        tutornameError.style.display = "block";
-    } else {
-        tutornameError.style.display = "none";
-    }
-
-    if (!tutorphone) {
-        tutorphoneError.style.display = "block";
-    } else {
-        tutorphoneError.style.display = "none";
-    }
-
-    if (!absencedate) {
-        absencedateError.style.display = "block";
-    } else {
-        absencedateError.style.display = "none";
-    }
-
-    if ( studentname && studentid && studentemail && tutorname && tutorphone && absencedate) {
-        // Si todo está bien, mostrar un mensaje de éxito
+    if (response === "ok") {
         alert("Excusa enviada correctamente.");
-        // Limpiar el formulario
         document.getElementById("excuseForm").reset();
+    } else {
+        alert("Error al enviar la excusa.");
     }
-});
 
+});
