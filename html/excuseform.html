@@ -17,7 +17,6 @@
         <div class="excuse-form">
             <h2 class="form-title">Formulario de Excusa</h2>
             <form id="excuseForm">
-                <!-- Datos del estudiante -->
                 <fieldset>
                     <legend>Datos del Estudiante</legend>
                     <div class="input-group">
@@ -37,7 +36,6 @@
                     </div>
                 </fieldset>
 
-                <!-- Datos del tutor -->
                 <fieldset>
                     <legend>Datos del Tutor</legend>
                     <div class="input-group">
@@ -52,7 +50,6 @@
                     </div>
                 </fieldset>
 
-                <!-- Fecha de inasistencia -->
                 <fieldset>
                     <legend>Fecha de Inasistencia</legend>
                     <div class="input-group">
@@ -62,7 +59,6 @@
                     </div>
                 </fieldset>
 
-                <!-- Tabla de materias -->
                 <fieldset>
                     <legend>Materias Inasistidas</legend>
                     <p>Selecciona las materias a las que faltaste:</p>
@@ -134,7 +130,6 @@
                     </table>
                 </fieldset>
 
-                <!-- Motivo de la ausencia -->
                 <div class="input-group">
                     <label for="absence-reason" class="input-label">Motivo de la Ausencia</label>
                     <select id="absence-reason" class="input-field">
@@ -146,14 +141,12 @@
                     <span id="absence-reason-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                 </div>
 
-                <!-- Descripción detallada -->
                 <div class="input-group">
                     <label for="absence-description" class="input-label">Descripción Detallada</label>
                     <textarea id="absence-description" class="input-field" rows="4" placeholder="Describe el motivo de tu ausencia"></textarea>
                     <span id="absence-description-error" class="error-message" style="display: none;">Este campo es obligatorio.</span>
                 </div>
 
-                <!-- Adjuntar archivos -->
                 <fieldset>
                     <legend>Adjuntar Archivos</legend>
                     <div class="input-group">
@@ -162,7 +155,6 @@
                     </div>
                 </fieldset>
 
-                <!-- Botón de enviar -->
                 <div class="form-actions">
                     <button id="excuseButton" type="submit" class="submit-button">
                         <i class="fas fa-paper-plane"></i> Enviar Excusa
@@ -173,6 +165,6 @@
     </div>
 
     <script src="../js/excuseform.js"></script> <!-- Lógica del formulario -->
-    <script src="../components/js/header.js"></script>
+    <script src="../components/js/header.js"></script> 
 </body>
 </html>

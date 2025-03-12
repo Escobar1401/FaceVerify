@@ -74,23 +74,50 @@ function initMenu() {
         ],
     };
 
+    // Función para verificar permisos
+    function checkPermission(link) {
+        const allowedLinks = menuOptions[userRole].map(option => option.link);
+        if (!allowedLinks.includes(link)) {
+            alert("No tienes permiso para acceder a esta funcionalidad.");
+            return false;
+        }
+        return true;
+    }
+
+    // Generar el menú dinámico
     function renderMenu(role) {
-        menuNav.innerHTML = "";
+        menuNav.innerHTML = ""; // Limpiar el menú antes de agregar nuevas opciones
         menuOptions[role].forEach(option => {
             const li = document.createElement("li");
             const a = document.createElement("a");
             a.href = option.link;
             a.textContent = option.text;
-            li.appendChild(a);
-            menuNav.appendChild(li);
-
-            a.addEventListener("click", () => {
+            a.addEventListener("click", (e) => {
+                if (!checkPermission(option.link)) {
+                    e.preventDefault(); // Evitar que el enlace funcione
+                }
                 menuOverlay.classList.remove("active");
             });
+            li.appendChild(a);
+            menuNav.appendChild(li);
         });
     }
 
     renderMenu(userRole);
+
+    // Función para actualizar el menú
+    function updateMenu() {
+        const newRole = localStorage.getItem("userRole") || "estudiante";
+        renderMenu(newRole);
+    }
+
+    // Escuchar cambios en el localStorage (opcional, solo si el rol cambia en la misma sesión)
+    window.addEventListener("storage", (event) => {
+        if (event.key === "userRole") {
+            updateMenu();
+        }
+    });
+
 
     openMenu.addEventListener("click", function () {
         menuOverlay.classList.add("active");
@@ -101,4 +128,12 @@ function initMenu() {
             menuOverlay.classList.remove("active");
         }
     });
+
+    // Verificar permisos al cargar la página
+    const currentPage = window.location.pathname.split("/").pop();
+    const allowedPages = menuOptions[userRole].map(option => option.link.split("/").pop());
+    if (!allowedPages.includes(currentPage)) {
+        alert("No tienes permiso para acceder a esta página.");
+        window.location.href = "homepage.html"; // Redirigir a la página principal
+    }
 }
